@@ -1,6 +1,7 @@
 import HeaderContainer from '@/component/Header';
 import styles from './index.less';
 import { DownOutlined } from '@ant-design/icons';
+import lightStyles from '@/public/common/index.less';
 import './default.less';
 
 export default function HomeContainer() {
@@ -13,7 +14,7 @@ export default function HomeContainer() {
       </div>
       <div className={styles.home_content}>
         <ul>
-          <li>sadasd</li>
+          <li className={lightStyles.lightColor}>11111</li>
           <li>sadasd</li>
           <li>sadasd</li>
           <li>sadasd</li>
