@@ -6,13 +6,18 @@ import styles from './index.less';
 export default function HeaderContainer() {
   return (
     <div className={styles.header_wrapper}>
-      <div
-        onClick={() => {
-          history.push('/');
-        }}
-        className={styles.header_wrapper_left}
-      >
-        栀桥
+      <div className={styles.header_wrapper_left}>
+        <span
+          onClick={() => {
+            history.push('/');
+          }}
+          style={{ cursor: 'pointer' }}
+        >
+          栀桥
+        </span>
+        <span style={{ color: '#ccc', fontSize: '12px', marginLeft: '10px' }}>
+          记录一点
+        </span>
       </div>
       <div className={styles.header_wrapper_right}>
         <Button type="link">

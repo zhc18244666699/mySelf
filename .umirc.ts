@@ -9,10 +9,6 @@ export default defineConfig({
       path: '/',
       component: '@/pages/Home/index',
     },
-    {
-      path: '/detail',
-      component: '@/pages/Home/index',
-    },
   ],
   fastRefresh: {},
 });

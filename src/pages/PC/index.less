@@ -1,0 +1,34 @@
+.PC_wrapper {
+  width: 100%;
+  height: 2300px;
+  overflow: auto;
+}
+
+.PC_bg {
+  width: 100%;
+  height: 100vh;
+  background-color: #eee;
+  background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg9.51tietu.net%2Fpic%2F2019-091014%2Ffc12qiou35tfc12qiou35t.jpg&refer=http%3A%2F%2Fimg9.51tietu.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652335273&t=e9481da4d660af12e2596e3dfe455256');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.PC_bg::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 2, 2, 0.2);
+  position: absolute;
+  top: 0;
+}
+.PC_title {
+  position: absolute;
+  top: 48%;
+  left: 49%;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
