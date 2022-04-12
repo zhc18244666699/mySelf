@@ -25,7 +25,7 @@ export default function HomeContainer() {
 
   return (
     <div className={styles.home_wrapper}>
-      {windowSize.innerWidth <= 600 ? <MobileContainer /> : <PCContainer />}
+      {windowSize.innerWidth <= 750 ? <MobileContainer /> : <PCContainer />}
     </div>
   );
 }

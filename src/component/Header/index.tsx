@@ -3,15 +3,21 @@ import { SearchOutlined, HomeOutlined } from '@ant-design/icons';
 import { history } from 'umi';
 import styles from './index.less';
 
-export default function HeaderContainer() {
+type propsType = {
+  style?: Object;
+  textColor?: string;
+};
+
+export default function HeaderContainer(props: propsType) {
+  const { style, textColor } = props;
   return (
-    <div className={styles.header_wrapper}>
+    <div style={style} className={styles.header_wrapper}>
       <div className={styles.header_wrapper_left}>
         <span
           onClick={() => {
             history.push('/');
           }}
-          style={{ cursor: 'pointer' }}
+          style={{ cursor: 'pointer', color: textColor }}
         >
           栀桥
         </span>
@@ -20,8 +26,8 @@ export default function HeaderContainer() {
         </span>
       </div>
       <div className={styles.header_wrapper_right}>
-        <Button type="link">
-          <SearchOutlined />
+        <Button type="link" style={{ color: textColor }}>
+          <SearchOutlined style={{ color: textColor }} />
           搜索
         </Button>
         <Button
@@ -29,8 +35,9 @@ export default function HeaderContainer() {
             history.push('/');
           }}
           type="link"
+          style={{ color: textColor }}
         >
-          <HomeOutlined />
+          <HomeOutlined style={{ color: textColor }} />
           首页
         </Button>
       </div>
