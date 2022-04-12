@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import MobileHeaderContainer from '@/component/MHeader';
+import CardContainer from '@/component/Card';
+import dataJson from '@/service/cardData.json';
 import styles from './index.less';
 
 export default function MobileContainer() {
   let scrollTop = 0;
   let topValue = 0;
 
+  const [data, setData] = useState<any>(dataJson);
   const [pageY, setPageY] = useState<number>(0);
   const [scrollBack, setScrollBack] = useState<boolean>(false);
 
@@ -21,7 +24,6 @@ export default function MobileContainer() {
 
   const bindHandleScroll = () => {
     scrollTop = getScollTop();
-    console.log(scrollTop, 'sad');
     if (scrollTop == 0) setScrollBack(false);
     if (scrollTop <= topValue) {
       setScrollBack(true);
@@ -58,8 +60,9 @@ export default function MobileContainer() {
         <h5 className={styles.MO_title}>栀 桥</h5>
       </div>
       <div className={styles.MO_content}>
-        <div className={styles.MO_content_left}></div>
-        <div className={styles.MO_content_right}></div>
+        {data.map((item: any) => {
+          return <CardContainer item={item} />;
+        })}
       </div>
     </div>
   );

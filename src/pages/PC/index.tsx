@@ -21,7 +21,6 @@ export default function PCContainer() {
 
   const bindHandleScroll = () => {
     scrollTop = getScollTop();
-    console.log(scrollTop, 'sad');
     if (scrollTop == 0) setScrollBack(false);
     if (scrollTop <= topValue) {
       setScrollBack(true);
