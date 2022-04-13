@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HeaderContainer from '@/component/Header/index';
+import { message } from 'antd';
+import { CaretUpFilled } from '@ant-design/icons';
 import styles from './index.less';
 
 export default function PCContainer() {
@@ -33,6 +35,10 @@ export default function PCContainer() {
     }, 0);
   };
 
+  const handletoTop = () => {
+    message.error('不好意思，暂时还不可以回到顶部，动动您的手指把！');
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', bindHandleScroll);
     return () => {
@@ -60,7 +66,17 @@ export default function PCContainer() {
         <div className={styles.PC_content_left}></div>
         <div className={styles.PC_content_right}></div>
       </div>
-      PC
+
+      <div
+        style={{ right: pageY > 30 ? '4px' : '-28px' }}
+        className={styles.PC_scroll}
+      >
+        <CaretUpFilled
+          onClick={() => {
+            handletoTop();
+          }}
+        />
+      </div>
     </div>
   );
 }
