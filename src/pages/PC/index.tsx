@@ -2,12 +2,18 @@ import React, { useState, useEffect } from 'react';
 import HeaderContainer from '@/component/Header/index';
 import { message } from 'antd';
 import { CaretUpFilled } from '@ant-design/icons';
+import cardJson from '@/service/cardData.json';
+import CardContainer from '@/component/Card';
+import CalendarContainer from '@/component/Calendar';
+import UserCard from '@/component/UserCard';
+import FooterContainer from '@/component/Footer';
 import styles from './index.less';
 
 export default function PCContainer() {
   let scrollTop = 0;
   let topValue = 0;
 
+  const [data, setData] = useState<any>(cardJson);
   const [pageY, setPageY] = useState<number>(0);
   const [scrollBack, setScrollBack] = useState<boolean>(false);
 
@@ -63,10 +69,21 @@ export default function PCContainer() {
         <h5 className={styles.PC_title}>栀 桥</h5>
       </div>
       <div className={styles.PC_content}>
-        <div className={styles.PC_content_left}></div>
-        <div className={styles.PC_content_right}></div>
+        <div className={styles.PC_content_left}>
+          {data.map((item: any) => {
+            return <CardContainer item={item} flex={true} />;
+          })}
+        </div>
+        <div className={styles.PC_content_right}>
+          <div className={styles.PC_content_right_userInfo}>
+            <UserCard avatarWidth="40%" />
+          </div>
+          <div className={styles.PC_content_right_calendar}>
+            <CalendarContainer />
+          </div>
+        </div>
       </div>
-
+      <FooterContainer />
       <div
         style={{ right: pageY > 30 ? '4px' : '-28px' }}
         className={styles.PC_scroll}

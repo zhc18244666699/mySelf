@@ -36,23 +36,33 @@
   max-width: 1200px;
   width: 80%;
   margin: 0 auto;
-  height: 1500px;
   background-color: #f1f1f1;
   display: flex;
 }
 
 .PC_content_left {
-  width: 84.5%;
-  height: 100%;
+  flex: 1;
+  flex-shrink: 0;
+  height: auto;
   background-color: #fff;
-  margin-right: 0.5%;
+  margin-right: 1%;
 }
 
 .PC_content_right {
-  width: 14.5%;
+  width: 290px;
   height: 100%;
-  margin-left: 0.5%;
+  margin-left: 1%;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.PC_content_right_userInfo {
+  width: 100%;
+}
+.PC_content_right_calendar {
+  width: 100%;
+  margin: 12px 0;
+  background-color: aliceblue;
 }
 
 .PC_scroll {

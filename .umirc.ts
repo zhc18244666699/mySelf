@@ -6,7 +6,7 @@ export default defineConfig({
   },
   favicon: 'https://i.postimg.cc/wMtwHDxn/20220317105728.png',
   // logo: 'https://i.postimg.cc/wMtwHDxn/20220317105728.png',
-  title: '栀桥',
+  title: '栀桥·进来看看',
   routes: [
     {
       path: '/',
@@ -15,6 +15,10 @@ export default defineConfig({
     {
       path: '/class',
       component: '@/pages/Classes/index',
+    },
+    {
+      path: '/detail',
+      component: '@/pages/Detail/index',
     },
   ],
   theme: {

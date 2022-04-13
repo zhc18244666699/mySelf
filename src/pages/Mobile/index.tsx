@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import MobileHeaderContainer from '@/component/MHeader';
 import CardContainer from '@/component/Card';
-import { message } from 'antd';
 import { CaretUpFilled } from '@ant-design/icons';
-import dataJson from '@/service/cardData.json';
+import { message } from 'antd';
+import cardJson from '@/service/cardData.json';
+import CalendarContainer from '@/component/Calendar';
+import UserCard from '@/component/UserCard';
+import FooterContainer from '@/component/Footer';
 import styles from './index.less';
 
 export default function MobileContainer() {
   let scrollTop = 0;
   let topValue = 0;
 
-  const [data, setData] = useState<any>(dataJson);
+  const [data, setData] = useState<any>(cardJson);
   const [pageY, setPageY] = useState<number>(0);
   const [scrollBack, setScrollBack] = useState<boolean>(false);
 
@@ -40,6 +43,10 @@ export default function MobileContainer() {
 
   const handletoTop = () => {
     message.error('不好意思，暂时还不可以回到顶部，动动您的手指把！');
+    // if (document?.getElementsByTagName("body") && document?.getElementsByTagName("body")[0]) {
+    //   console.log(document?.getElementsByTagName("body")[0], 'asd')
+    //   document?.getElementsByTagName("body")[0]?.scrollTo({ top: 0, behavior: "smooth" });
+    // }
   };
 
   useEffect(() => {
@@ -66,10 +73,21 @@ export default function MobileContainer() {
         <h5 className={styles.MO_title}>栀 桥</h5>
       </div>
       <div className={styles.MO_content}>
-        {data.map((item: any) => {
-          return <CardContainer key={item.id} flex={false} item={item} />;
-        })}
+        <div className={styles.MO_content_left}>
+          {data.map((item: any) => {
+            return <CardContainer key={item.id} flex={false} item={item} />;
+          })}
+        </div>
+        <div className={styles.MO_content_right}>
+          <div className={styles.MO_content_right_userInfo}>
+            <UserCard avatarWidth="20%" />
+          </div>
+          <div className={styles.MO_content_right_calendar}>
+            <CalendarContainer />
+          </div>
+        </div>
       </div>
+      <FooterContainer />
       <div
         style={{ right: pageY > 30 ? '4px' : '-28px' }}
         className={styles.MO_scroll}
