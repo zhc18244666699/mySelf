@@ -7,9 +7,7 @@ export default function DetailContainer() {
   console.log(location, 'sadasd');
   return (
     <div className={styles.detail_wrapper}>
-      <div className={styles.detail_bg}>
-        <h5 className={styles.PC_title}>{history?.title}</h5>
-      </div>
+      <div className={styles.detail_bg}></div>
     </div>
   );
 }
