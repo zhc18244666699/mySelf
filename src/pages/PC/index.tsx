@@ -45,6 +45,7 @@ export default function PCContainer() {
     message.error('不好意思，暂时还不可以回到顶部，动动您的手指把！');
   };
 
+  // 首次加载
   useEffect(() => {
     window.addEventListener('scroll', bindHandleScroll);
     return () => {
