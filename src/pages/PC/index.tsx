@@ -71,7 +71,7 @@ export default function PCContainer() {
       <div className={styles.PC_content}>
         <div className={styles.PC_content_left}>
           {data.map((item: any) => {
-            return <CardContainer item={item} flex={true} />;
+            return <CardContainer key={item.id} item={item} flex={true} />;
           })}
         </div>
         <div className={styles.PC_content_right}>

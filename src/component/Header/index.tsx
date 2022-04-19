@@ -1,6 +1,8 @@
 import { Button } from 'antd';
 import { SearchOutlined, HomeOutlined } from '@ant-design/icons';
+import { Avatar } from 'antd';
 import { history } from 'umi';
+import SearchContainer from '@/component/Search/index';
 import styles from './index.less';
 
 type propsType = {
@@ -13,6 +15,12 @@ export default function HeaderContainer(props: propsType) {
   return (
     <div style={style} className={styles.header_wrapper}>
       <div className={styles.header_wrapper_left}>
+        <Avatar
+          style={{
+            marginRight: '10px',
+          }}
+          src="https://i.postimg.cc/52nn5Ncg/image.png"
+        />
         <span
           onClick={() => {
             history.push('/');
@@ -26,10 +34,7 @@ export default function HeaderContainer(props: propsType) {
         </span>
       </div>
       <div className={styles.header_wrapper_right}>
-        <Button type="link" style={{ color: textColor }}>
-          <SearchOutlined style={{ color: textColor }} />
-          搜索
-        </Button>
+        <SearchContainer textColor={textColor} />
         <Button
           onClick={() => {
             history.push('/');

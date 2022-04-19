@@ -37,6 +37,7 @@ export default function CardContainer(props: propsType) {
           className={styles.card_wrapper_dt}
         >
           <img
+            className={styles.card_wrapper_dt_img}
             onClick={() => {
               // history.push({
               //   pathname: '/detail',
