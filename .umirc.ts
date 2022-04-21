@@ -20,6 +20,9 @@ export default defineConfig({
       path: '/detail',
       component: '@/pages/Detail/index',
     },
+    {
+      component: '@/pages/404',
+    },
   ],
   theme: {
     '@primary-color': '#000',
