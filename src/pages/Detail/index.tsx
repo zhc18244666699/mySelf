@@ -12,7 +12,7 @@ export default function DetailContainer() {
   let topValue = 0;
 
   // @ts-ignore
-  const [id] = useState<number>(history.location.query.id);
+  const [id] = useState<number>(Number(history.location.query.id));
   const [detailInfo, setDetailInfo] = useState<any>({});
 
   const [pageY, setPageY] = useState<number>(0);
@@ -62,7 +62,6 @@ export default function DetailContainer() {
       }
     });
     setDetailInfo(detail);
-    console.log(detail, 'detail');
   });
 
   return (
@@ -85,7 +84,7 @@ export default function DetailContainer() {
         <h5 className={styles.PC_title}>{detailInfo.title}</h5>
       </div>
       <div className={styles.detail_bg}>
-        <DetailContent id={id} />
+        <DetailContent detailId={id} />
       </div>
       <FooterContainer />
     </div>

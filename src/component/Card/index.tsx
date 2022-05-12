@@ -39,10 +39,7 @@ export default function CardContainer(props: propsType) {
           <img
             className={styles.card_wrapper_dt_img}
             onClick={() => {
-              // history.push({
-              //   pathname: '/detail',
-              //   ...item,
-              // });
+              history.push(`/detail?id=${item?.id}`);
             }}
             style={{ borderRadius: flex ? '8px 0 0 8px' : '8px 8px 0 0' }}
             src={item?.img}
@@ -51,7 +48,7 @@ export default function CardContainer(props: propsType) {
         <dd className={styles.card_wrapper_dd}>
           <h5
             onClick={() => {
-              // history.push(`/detail?id=${item?.id}`);
+              history.push(`/detail?id=${item?.id}`);
             }}
           >
             {item?.title}
